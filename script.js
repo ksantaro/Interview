@@ -32,7 +32,7 @@ function CalanderEvents(events) {
 	
 	this.compare = function(event1, event2) {
 		if (event1.date === event2.date) {
-			if((event1.timeRange[0] < event2.timeRange[0] && event1.timeRange[0] > event2.timeRange[1]) && (event1.timeRange[1] > event2.timeRange[0] && event1.timeRange[1] < event2.timeRange[0])) {
+			if((event1.timeRange[0] < event2.timeRange[0] && event1.timeRange[1] > event2.timeRange[0]) || (event1.timeRange[0] > event2.timeRange[1] && event1.timeRange[1] < event2.timeRange[0])) {
 				return false;
 			} else {
 				return true;
